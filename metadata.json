@@ -1,0 +1,6 @@
+{
+  "name": "Azhar Chiniot Pakwan",
+  "description": "Authentic Pakistani Pakwan, Biryani, Mutton Kunna, Qorma, and royal catering services in Model Town, Lahore. Order online or via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
