@@ -114,12 +114,12 @@ export const CartDrawer: React.FC = () => {
                   className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3.5 hover:border-slate-700 transition-all"
                 >
                   <img
-                    src={resolveDishImage(item.menuItem.image)}
+                    src={resolveDishImage(item.menuItem.image, item.menuItem.id, item.menuItem.categoryId)}
                     alt={item.menuItem.nameEn}
                     className="w-16 h-16 rounded-lg object-cover bg-slate-950 shrink-0"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = IMAGES.heroSpread;
+                      (e.target as HTMLImageElement).src = IMAGES.chickenBiryani;
                     }}
                   />
 

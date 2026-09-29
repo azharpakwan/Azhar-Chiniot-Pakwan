@@ -54,13 +54,13 @@ export const FeaturedDishes: React.FC = () => {
                 onClick={() => setSelectedDish(dish)}
               >
                 <img
-                  src={resolveDishImage(dish.image)}
+                  src={resolveDishImage(dish.image, dish.id, dish.categoryId)}
                   alt={dish.nameEn}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
-                    // Fallback to hero image if any asset path issue arises
-                    (e.target as HTMLImageElement).src = IMAGES.heroSpread;
+                    // Fallback to chicken biryani image if any asset path issue arises
+                    (e.target as HTMLImageElement).src = IMAGES.chickenBiryani;
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />

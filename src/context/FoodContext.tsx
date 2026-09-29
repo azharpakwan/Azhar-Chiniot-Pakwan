@@ -45,7 +45,7 @@ interface FoodContextType {
   removePromoCode: () => void;
 
   // Orders
-  placeOrder: (customer: OrderCustomer, paymentMethod: Order['paymentMethod']) => Order;
+  placeOrder: (customer: OrderCustomer, paymentMethod?: Order['paymentMethod']) => Order;
   generateWhatsAppOrderUrl: (overrideCustomer?: Partial<OrderCustomer>) => string;
 
   // Admin management
@@ -63,12 +63,12 @@ interface FoodContextType {
 const FoodContext = createContext<FoodContextType | undefined>(undefined);
 
 const LOCAL_STORAGE_KEYS = {
-  MENU: 'azhar_pakwan_menu_v2',
-  CATEGORIES: 'azhar_pakwan_categories_v2',
-  OFFERS: 'azhar_pakwan_offers_v2',
-  CART: 'azhar_pakwan_cart_v2',
-  ORDERS: 'azhar_pakwan_orders_v2',
-  LANG: 'azhar_pakwan_lang_v2',
+  MENU: 'azhar_pakwan_menu_v3',
+  CATEGORIES: 'azhar_pakwan_categories_v3',
+  OFFERS: 'azhar_pakwan_offers_v3',
+  CART: 'azhar_pakwan_cart_v3',
+  ORDERS: 'azhar_pakwan_orders_v3',
+  LANG: 'azhar_pakwan_lang_v3',
 };
 
 export const FoodProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -79,7 +79,7 @@ export const FoodProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const parsed: MenuItem[] = JSON.parse(saved);
         return parsed.map((item) => ({
           ...item,
-          image: resolveDishImage(item.image),
+          image: resolveDishImage(item.image, item.id, item.categoryId),
         }));
       }
       return INITIAL_MENU_ITEMS;
@@ -299,7 +299,7 @@ export const FoodProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const placeOrder = (
     customer: OrderCustomer,
-    paymentMethod: Order['paymentMethod']
+    paymentMethod: Order['paymentMethod'] = 'cod'
   ): Order => {
     const newOrder: Order = {
       id: `ord-${Date.now()}`,
@@ -324,7 +324,7 @@ export const FoodProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const generateWhatsAppOrderUrl = (overrideCustomer?: Partial<OrderCustomer>): string => {
-    const businessPhone = '923004567890';
+    const businessPhone = '923004936594';
     let text = `*New Food Order - Azhar Chiniot Pakwan (Al Mashoor Model Town Wala)*\n\n`;
 
     if (cart.length === 0) {

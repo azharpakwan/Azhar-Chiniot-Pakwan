@@ -15,7 +15,7 @@ export const OrderConfirmationModal: React.FC = () => {
 
   const getWhatsAppFollowUp = () => {
     const text = `Assalam-o-Alaikum! I have placed order *#${order.orderNumber}* for *${order.customer.name}*. Total: Rs. ${order.total.toLocaleString()}. Please confirm receipt and estimated delivery time. Shukriya!`;
-    return `https://wa.me/923004567890?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/923004936594?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -118,7 +118,7 @@ export const OrderConfirmationModal: React.FC = () => {
               </span>
             </div>
             <div className="flex justify-between items-center pt-2 border-t border-slate-800 text-sm font-bold text-white">
-              <span>Total Bill ({order.paymentMethod.toUpperCase()}):</span>
+              <span>Total Bill:</span>
               <span className="text-amber-400 text-base tabular-nums">
                 Rs. {order.total.toLocaleString()}
               </span>

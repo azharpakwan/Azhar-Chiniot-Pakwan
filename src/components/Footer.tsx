@@ -111,8 +111,8 @@ export const Footer: React.FC = () => {
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href="tel:+923004567890" className="hover:text-amber-400">
-                  +92 300 4567890
+                <a href="tel:03004936594" className="hover:text-amber-400">
+                  03004936594
                 </a>
               </p>
               <p className="flex items-center gap-2">
@@ -123,7 +123,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="hover:text-emerald-300 font-semibold text-emerald-400"
                 >
-                  WhatsApp: 0300-4567890
+                  WhatsApp: 03004936594
                 </a>
               </p>
               <p className="text-[11px] text-slate-400 pt-1">

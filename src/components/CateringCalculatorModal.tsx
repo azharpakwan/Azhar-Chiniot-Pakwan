@@ -49,7 +49,7 @@ export const CateringCalculatorModal: React.FC<CateringCalculatorModalProps> = (
       `• *Includes Degi Zarda/Sweet:* ${includeSweet ? 'Yes (Zarda/Mutanjan)' : 'No'}\n` +
       `• *Estimated Total Budget:* Rs. ${estimatedGrandTotal.toLocaleString()}\n\n` +
       `Please provide booking availability, live tandoor options, and formal quote for my event.`;
-    return `https://wa.me/923004567890?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/923004936594?text=${encodeURIComponent(text)}`;
   };
 
   return (

@@ -15,7 +15,7 @@ export const ContactSection: React.FC = () => {
     setSubmitted(true);
     // Open whatsapp with inquiry
     const text = `*New Customer Inquiry - Azhar Chiniot Pakwan*\n\n• Name: ${inquiryName}\n• Phone: ${inquiryPhone}\n• Message: ${inquiryMessage}`;
-    window.open(`https://wa.me/923004567890?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/923004936594?text=${encodeURIComponent(text)}`, '_blank');
     setTimeout(() => {
       setSubmitted(false);
       setInquiryName('');
@@ -114,16 +114,10 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div className="space-y-0.5">
                   <a
-                    href="tel:+923004567890"
-                    className="block text-sm font-bold text-white hover:text-amber-400 transition-colors"
+                    href="tel:03004936594"
+                    className="block text-base font-bold text-white hover:text-amber-400 transition-colors tracking-wide"
                   >
-                    +92 300 4567890
-                  </a>
-                  <a
-                    href="tel:+923219876543"
-                    className="block text-xs text-slate-300 hover:text-amber-400 transition-colors"
-                  >
-                    +92 321 9876543
+                    03004936594
                   </a>
                 </div>
                 <p className="text-[11px] text-slate-400">

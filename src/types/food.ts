@@ -61,7 +61,7 @@ export interface Order {
   deliveryFee: number;
   discount: number;
   total: number;
-  paymentMethod: 'cod' | 'jazzcash' | 'easypaisa' | 'bank_transfer';
+  paymentMethod?: string;
   status: 'pending' | 'cooking' | 'out_for_delivery' | 'completed';
   createdAt: string;
 }

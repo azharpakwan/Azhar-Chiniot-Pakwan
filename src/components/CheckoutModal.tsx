@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, MapPin, Phone, User, Bike, Store, CreditCard, MessageCircle, Check, ArrowRight } from 'lucide-react';
+import { X, MapPin, Phone, User, Bike, Store, MessageCircle, Check, ArrowRight } from 'lucide-react';
 import { useFood } from '../context/FoodContext';
 import { OrderCustomer } from '../types/food';
 
@@ -21,7 +21,6 @@ export const CheckoutModal: React.FC = () => {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [notes, setNotes] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'jazzcash' | 'easypaisa' | 'bank_transfer'>('cod');
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   if (!isCheckoutOpen) return null;
@@ -56,7 +55,7 @@ export const CheckoutModal: React.FC = () => {
       notes,
     };
 
-    placeOrder(customer, paymentMethod);
+    placeOrder(customer);
     setIsCheckoutOpen(false);
   };
 
@@ -71,7 +70,7 @@ export const CheckoutModal: React.FC = () => {
       notes,
     };
 
-    placeOrder(customer, paymentMethod);
+    placeOrder(customer);
     setIsCheckoutOpen(false);
     window.open(generateWhatsAppOrderUrl(customer), '_blank');
   };
@@ -208,37 +207,9 @@ export const CheckoutModal: React.FC = () => {
                 type="text"
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Raita instructions, change required for 5000 note, ring bell twice, etc."
+                placeholder="Raita instructions, special preferences, ring bell twice, etc."
                 className="w-full bg-slate-900 border border-slate-800 focus:border-amber-400 px-3 py-2 rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 outline-none"
               />
-            </div>
-          </div>
-
-          {/* Payment Method */}
-          <div className="space-y-2">
-            <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider">
-              Payment Method
-            </h4>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
-              {[
-                { id: 'cod', label: 'Cash on Delivery' },
-                { id: 'jazzcash', label: 'JazzCash' },
-                { id: 'easypaisa', label: 'EasyPaisa' },
-                { id: 'bank_transfer', label: 'Bank Transfer' },
-              ].map((m) => (
-                <button
-                  key={m.id}
-                  type="button"
-                  onClick={() => setPaymentMethod(m.id as any)}
-                  className={`p-2.5 rounded-xl border text-center transition-all ${
-                    paymentMethod === m.id
-                      ? 'bg-amber-950/40 border-amber-400 text-amber-300 font-bold shadow-sm'
-                      : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
-                  }`}
-                >
-                  {m.label}
-                </button>
-              ))}
             </div>
           </div>
 
@@ -261,7 +232,7 @@ export const CheckoutModal: React.FC = () => {
               </span>
             </div>
             <div className="flex justify-between items-center pt-2 border-t border-slate-800 text-sm font-bold text-white">
-              <span>Net Payable Amount:</span>
+              <span>Total Amount:</span>
               <span className="text-amber-400 text-base tabular-nums">
                 Rs. {currentTotal.toLocaleString()}
               </span>
@@ -275,7 +246,7 @@ export const CheckoutModal: React.FC = () => {
               className="w-full flex items-center justify-center gap-2 py-3.5 px-4 text-xs sm:text-sm font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-xl shadow-lg shadow-amber-400/20 transition-all active:scale-95"
             >
               <Check className="w-4 h-4" />
-              <span>Confirm Order Online</span>
+              <span>Confirm Order</span>
             </button>
 
             <button

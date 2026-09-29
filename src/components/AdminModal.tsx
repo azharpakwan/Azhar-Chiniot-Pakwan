@@ -53,7 +53,7 @@ export const AdminModal: React.FC = () => {
     descriptionUrdu: '',
     price: 500,
     portionLabel: 'Full Plate',
-    image: IMAGES.heroSpread,
+    image: IMAGES.chickenBiryani,
     ingredientsEn: 'Basmati Rice, Fresh Chicken, Desi Spices',
     ingredientsUrdu: 'باسمتی چاول، چکن، مصالحہ جات',
     servingSize: 'Plate (~450g)',
@@ -123,7 +123,7 @@ export const AdminModal: React.FC = () => {
       descriptionUrdu: '',
       price: 500,
       portionLabel: 'Full Plate',
-      image: IMAGES.heroSpread,
+      image: IMAGES.chickenBiryani,
       ingredientsEn: 'Basmati Rice, Fresh Chicken, Desi Spices',
       ingredientsUrdu: 'باسمتی چاول، چکن، مصالحہ جات',
       servingSize: 'Plate (~450g)',
@@ -430,11 +430,11 @@ export const AdminModal: React.FC = () => {
                       <tr key={dish.id} className="hover:bg-slate-900/50 transition-colors">
                         <td className="p-3 flex items-center gap-3">
                           <img
-                            src={resolveDishImage(dish.image)}
+                            src={resolveDishImage(dish.image, dish.id, dish.categoryId)}
                             alt=""
                             className="w-10 h-10 rounded-lg object-cover bg-slate-900 shrink-0"
                             onError={(e) => {
-                              (e.target as HTMLImageElement).src = IMAGES.heroSpread;
+                              (e.target as HTMLImageElement).src = IMAGES.chickenBiryani;
                             }}
                           />
                           <div>
@@ -587,10 +587,11 @@ export const AdminModal: React.FC = () => {
 
                 <div>
                   <label className="block text-slate-400 mb-1">Select Preset Image or Custom URL</label>
-                  <div className="grid grid-cols-4 gap-2 mb-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-2">
                     {[
-                      { label: 'Royal Feast', path: IMAGES.heroSpread },
-                      { label: 'Biryani Platter', path: IMAGES.specialBiryani },
+                      { label: 'Chicken Biryani Deg', path: IMAGES.chickenBiryani },
+                      { label: 'Sindhi Biryani Deg', path: IMAGES.sindhiBiryani },
+                      { label: 'Chicken Qorma', path: IMAGES.chickenQorma },
                       { label: 'Mutton Kunna', path: IMAGES.muttonKunna },
                       { label: 'Wedding Daig', path: IMAGES.weddingDeg },
                     ].map((imgPreset, idx) => (
@@ -717,7 +718,7 @@ export const AdminModal: React.FC = () => {
                             ))}
                           </ul>
                           <p className="font-bold text-amber-400 mt-2">
-                            Total: Rs. {ord.total.toLocaleString()} ({ord.paymentMethod.toUpperCase()})
+                            Total: Rs. {ord.total.toLocaleString()}
                           </p>
                         </div>
                       </div>

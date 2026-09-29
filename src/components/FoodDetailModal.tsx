@@ -74,12 +74,12 @@ export const FoodDetailModal: React.FC = () => {
         {/* Top: Large Food Image */}
         <div className="relative h-64 sm:h-80 w-full overflow-hidden bg-slate-950 shrink-0">
           <img
-            src={resolveDishImage(selectedDish.image)}
+            src={resolveDishImage(selectedDish.image, selectedDish.id, selectedDish.categoryId)}
             alt={selectedDish.nameEn}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = IMAGES.heroSpread;
+              (e.target as HTMLImageElement).src = IMAGES.chickenBiryani;
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0e1422] via-[#0e1422]/20 to-transparent" />
