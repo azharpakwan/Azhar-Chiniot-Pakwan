@@ -65,7 +65,7 @@ export const AboutUs: React.FC = () => {
             </div>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Founded on the timeless culinary traditions of Chiniot, <strong className="text-white font-semibold">Azhar Chiniot Pakwan</strong> has earned legendary status in Model Town, Lahore. We specialize in authentic Pakistani pakwan, slow-cooked in traditional copper deghs and earthenware clay pots.
+              Founded on the timeless culinary traditions of Chiniot, <strong className="text-white font-semibold">Azhar Chiniot Pakwan</strong> has earned legendary status in Model Town Extension, Lahore (located at N Block, Zahoor Market). We specialize in authentic Pakistani pakwan, slow-cooked in traditional copper deghs and earthenware clay pots.
             </p>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">

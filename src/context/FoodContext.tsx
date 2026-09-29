@@ -63,12 +63,12 @@ interface FoodContextType {
 const FoodContext = createContext<FoodContextType | undefined>(undefined);
 
 const LOCAL_STORAGE_KEYS = {
-  MENU: 'azhar_pakwan_menu_v3',
-  CATEGORIES: 'azhar_pakwan_categories_v3',
-  OFFERS: 'azhar_pakwan_offers_v3',
-  CART: 'azhar_pakwan_cart_v3',
-  ORDERS: 'azhar_pakwan_orders_v3',
-  LANG: 'azhar_pakwan_lang_v3',
+  MENU: 'azhar_pakwan_menu_v4',
+  CATEGORIES: 'azhar_pakwan_categories_v4',
+  OFFERS: 'azhar_pakwan_offers_v4',
+  CART: 'azhar_pakwan_cart_v4',
+  ORDERS: 'azhar_pakwan_orders_v4',
+  LANG: 'azhar_pakwan_lang_v4',
 };
 
 export const FoodProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {

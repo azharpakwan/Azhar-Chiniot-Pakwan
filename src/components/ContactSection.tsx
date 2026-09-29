@@ -61,8 +61,11 @@ export const ContactSection: React.FC = () => {
                   <p className="text-xs font-semibold text-amber-400 mb-1">
                     Al Mashoor Model Town Wala · المشہور ماڈل ٹاؤن والا
                   </p>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    Model Town Link Road, Near C-Block Main Commercial Market, Lahore, Punjab, Pakistan.
+                  <p className="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed">
+                    N Block, Zahoor Market, Model Town Extension, Lahore, Punjab, Pakistan.
+                  </p>
+                  <p className="font-urdu text-sm text-amber-300/90 pt-1">
+                    این بلاک، ظہور مارکیٹ، ماڈل ٹاؤن ایکسٹینشن، لاہور
                   </p>
                 </div>
               </div>
@@ -70,7 +73,7 @@ export const ContactSection: React.FC = () => {
               {/* Action buttons */}
               <div className="pt-2 flex flex-wrap gap-2.5">
                 <a
-                  href="https://maps.google.com/?q=Model+Town+Link+Road+Lahore"
+                  href="https://maps.google.com/?q=N+Block+Zahoor+Market+Model+Town+Extension+Lahore"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl transition-all"

@@ -1,4 +1,4 @@
-import chickenBiryani from './images/chicken_biryani_deg_1790669221794.jpg';
+import chickenBiryani from './images/chicken_biryani_daig_1790670921187.jpg';
 import sindhiBiryani from './images/sindhi_biryani_deg_1790669238681.jpg';
 import chickenQorma from './images/chicken_qorma_handi_1790669254003.jpg';
 import muttonKunna from './images/mutton_dish_deg_1790669272702.jpg';

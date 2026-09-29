@@ -42,7 +42,7 @@ export const OrderConfirmationModal: React.FC = () => {
             Shukriya! Order #{order.orderNumber}
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto">
-            Your authentic Chinioti meal is being forwarded to our master bawarchi in Model Town.
+            Your authentic Chinioti meal is being forwarded to our master bawarchi in Model Town Extension.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export const OrderConfirmationModal: React.FC = () => {
           <p className="font-semibold text-white">Customer Information:</p>
           <p><strong>Name:</strong> {order.customer.name}</p>
           <p><strong>Phone:</strong> {order.customer.phone}</p>
-          <p><strong>Type:</strong> {order.customer.deliveryType === 'delivery' ? 'Home Delivery' : 'Self Pickup (Model Town)'}</p>
+          <p><strong>Type:</strong> {order.customer.deliveryType === 'delivery' ? 'Home Delivery' : 'Self Pickup (Model Town Extension)'}</p>
           {order.customer.address && <p><strong>Address:</strong> {order.customer.address}</p>}
           {order.customer.notes && <p><strong>Instructions:</strong> {order.customer.notes}</p>}
         </div>

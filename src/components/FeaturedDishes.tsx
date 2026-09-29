@@ -13,7 +13,7 @@ export const FeaturedDishes: React.FC = () => {
     .slice(0, 4);
 
   return (
-    <section className="py-16 bg-[#0b0f17] border-t border-slate-800/80">
+    <section id="dishes" className="pt-8 pb-16 bg-[#0b0f17]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

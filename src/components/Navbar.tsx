@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Zone 1: Single text element wordmark */}
-        <a href="#hero" className="flex items-center gap-3 group">
+        <a href="#dishes" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-slate-950 font-display font-bold text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
             AP
           </div>
@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
 
         {/* Zone 2: 4-6 clean text navigation links */}
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
-          <a href="#hero" className="hover:text-amber-400 transition-colors">
+          <a href="#dishes" className="hover:text-amber-400 transition-colors">
             Home
           </a>
           <a href="#menu" className="hover:text-amber-400 transition-colors">

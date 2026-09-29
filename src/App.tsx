@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FoodProvider, useFood } from './context/FoodContext';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
 import { FeaturedDishes } from './components/FeaturedDishes';
 import { MenuSection } from './components/MenuSection';
 import { SpecialOffers } from './components/SpecialOffers';
@@ -27,7 +26,6 @@ const AppContent: React.FC = () => {
 
       {/* Main Content */}
       <main className="flex-1">
-        <Hero />
         <FeaturedDishes />
         <MenuSection onOpenCalculator={() => setIsCalculatorOpen(true)} />
         <SpecialOffers />

@@ -51,7 +51,7 @@ export const CheckoutModal: React.FC = () => {
       name,
       phone,
       deliveryType,
-      address: deliveryType === 'delivery' ? address : 'Self-Pickup: Azhar Chiniot Pakwan, Model Town Link Road',
+      address: deliveryType === 'delivery' ? address : 'Self-Pickup: Azhar Chiniot Pakwan, N Block, Zahoor Market, Model Town Extension, Lahore',
       notes,
     };
 
@@ -66,7 +66,7 @@ export const CheckoutModal: React.FC = () => {
       name,
       phone,
       deliveryType,
-      address: deliveryType === 'delivery' ? address : 'Self-Pickup: Model Town Branch',
+      address: deliveryType === 'delivery' ? address : 'Self-Pickup: N Block, Zahoor Market, Model Town Extension, Lahore',
       notes,
     };
 
@@ -137,7 +137,7 @@ export const CheckoutModal: React.FC = () => {
                 </div>
                 <div className="text-left">
                   <p className="text-xs font-bold">Self Pickup (Takeaway)</p>
-                  <p className="text-[10px] text-slate-400">Model Town Link Road</p>
+                  <p className="text-[10px] text-slate-400">N Block, Model Town Ext</p>
                 </div>
               </button>
             </div>
