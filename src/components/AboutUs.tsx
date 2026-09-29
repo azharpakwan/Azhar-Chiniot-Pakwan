@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChefHat, Flame, Award, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
 import { useFood } from '../context/FoodContext';
+import { IMAGES } from '../assets/images';
 
 export const AboutUs: React.FC = () => {
   const { language } = useFood();
@@ -15,7 +16,7 @@ export const AboutUs: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl shadow-black/80 group">
               <img
-                src="/src/assets/images/catering_wedding_deg_1790592481502.jpg"
+                src={IMAGES.weddingDeg}
                 alt="Traditional copper pakwan deghs of Azhar Chiniot Pakwan simmering for wedding catering"
                 className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"

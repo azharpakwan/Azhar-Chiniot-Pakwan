@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Plus, Minus, Flame, ShoppingBag, Clock, Sparkles, Check, MessageCircle } from 'lucide-react';
 import { useFood } from '../context/FoodContext';
 import { PortionOption } from '../types/food';
+import { IMAGES, resolveDishImage } from '../assets/images';
 
 export const FoodDetailModal: React.FC = () => {
   const {
@@ -73,12 +74,12 @@ export const FoodDetailModal: React.FC = () => {
         {/* Top: Large Food Image */}
         <div className="relative h-64 sm:h-80 w-full overflow-hidden bg-slate-950 shrink-0">
           <img
-            src={selectedDish.image}
+            src={resolveDishImage(selectedDish.image)}
             alt={selectedDish.nameEn}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = '/src/assets/images/hero_azhar_pakwan_spread_1790592430943.jpg';
+              (e.target as HTMLImageElement).src = IMAGES.heroSpread;
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0e1422] via-[#0e1422]/20 to-transparent" />

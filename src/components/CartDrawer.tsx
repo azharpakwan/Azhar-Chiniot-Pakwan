@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Plus, Minus, Trash2, ShoppingBag, ArrowRight, MessageCircle, Tag, Check, Sparkles } from 'lucide-react';
 import { useFood } from '../context/FoodContext';
+import { IMAGES, resolveDishImage } from '../assets/images';
 
 export const CartDrawer: React.FC = () => {
   const {
@@ -113,12 +114,12 @@ export const CartDrawer: React.FC = () => {
                   className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3.5 hover:border-slate-700 transition-all"
                 >
                   <img
-                    src={item.menuItem.image}
+                    src={resolveDishImage(item.menuItem.image)}
                     alt={item.menuItem.nameEn}
                     className="w-16 h-16 rounded-lg object-cover bg-slate-950 shrink-0"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = '/src/assets/images/hero_azhar_pakwan_spread_1790592430943.jpg';
+                      (e.target as HTMLImageElement).src = IMAGES.heroSpread;
                     }}
                   />
 

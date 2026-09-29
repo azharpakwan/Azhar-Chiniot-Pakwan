@@ -2,6 +2,7 @@ import React from 'react';
 import { Star, Plus, Flame, Clock, Sparkles } from 'lucide-react';
 import { useFood } from '../context/FoodContext';
 import { MenuItem } from '../types/food';
+import { IMAGES, resolveDishImage } from '../assets/images';
 
 export const FeaturedDishes: React.FC = () => {
   const { menuItems, setSelectedDish, addToCart, language } = useFood();
@@ -53,13 +54,13 @@ export const FeaturedDishes: React.FC = () => {
                 onClick={() => setSelectedDish(dish)}
               >
                 <img
-                  src={dish.image}
+                  src={resolveDishImage(dish.image)}
                   alt={dish.nameEn}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
                     // Fallback to hero image if any asset path issue arises
-                    (e.target as HTMLImageElement).src = '/src/assets/images/hero_azhar_pakwan_spread_1790592430943.jpg';
+                    (e.target as HTMLImageElement).src = IMAGES.heroSpread;
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />

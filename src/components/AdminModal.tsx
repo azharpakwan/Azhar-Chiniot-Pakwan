@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { useFood } from '../context/FoodContext';
 import { MenuItem, Category, SpecialOffer, Order } from '../types/food';
+import { IMAGES, resolveDishImage } from '../assets/images';
 
 export const AdminModal: React.FC = () => {
   const {
@@ -52,7 +53,7 @@ export const AdminModal: React.FC = () => {
     descriptionUrdu: '',
     price: 500,
     portionLabel: 'Full Plate',
-    image: '/src/assets/images/hero_azhar_pakwan_spread_1790592430943.jpg',
+    image: IMAGES.heroSpread,
     ingredientsEn: 'Basmati Rice, Fresh Chicken, Desi Spices',
     ingredientsUrdu: 'باسمتی چاول، چکن، مصالحہ جات',
     servingSize: 'Plate (~450g)',
@@ -122,7 +123,7 @@ export const AdminModal: React.FC = () => {
       descriptionUrdu: '',
       price: 500,
       portionLabel: 'Full Plate',
-      image: '/src/assets/images/hero_azhar_pakwan_spread_1790592430943.jpg',
+      image: IMAGES.heroSpread,
       ingredientsEn: 'Basmati Rice, Fresh Chicken, Desi Spices',
       ingredientsUrdu: 'باسمتی چاول، چکن، مصالحہ جات',
       servingSize: 'Plate (~450g)',
@@ -429,11 +430,11 @@ export const AdminModal: React.FC = () => {
                       <tr key={dish.id} className="hover:bg-slate-900/50 transition-colors">
                         <td className="p-3 flex items-center gap-3">
                           <img
-                            src={dish.image}
+                            src={resolveDishImage(dish.image)}
                             alt=""
                             className="w-10 h-10 rounded-lg object-cover bg-slate-900 shrink-0"
                             onError={(e) => {
-                              (e.target as HTMLImageElement).src = '/src/assets/images/hero_azhar_pakwan_spread_1790592430943.jpg';
+                              (e.target as HTMLImageElement).src = IMAGES.heroSpread;
                             }}
                           />
                           <div>
@@ -588,10 +589,10 @@ export const AdminModal: React.FC = () => {
                   <label className="block text-slate-400 mb-1">Select Preset Image or Custom URL</label>
                   <div className="grid grid-cols-4 gap-2 mb-2">
                     {[
-                      { label: 'Royal Feast', path: '/src/assets/images/hero_azhar_pakwan_spread_1790592430943.jpg' },
-                      { label: 'Biryani Platter', path: '/src/assets/images/food_special_biryani_1790592467140.jpg' },
-                      { label: 'Mutton Kunna', path: '/src/assets/images/food_chinioti_mutton_kunna_1790592451492.jpg' },
-                      { label: 'Wedding Daig', path: '/src/assets/images/catering_wedding_deg_1790592481502.jpg' },
+                      { label: 'Royal Feast', path: IMAGES.heroSpread },
+                      { label: 'Biryani Platter', path: IMAGES.specialBiryani },
+                      { label: 'Mutton Kunna', path: IMAGES.muttonKunna },
+                      { label: 'Wedding Daig', path: IMAGES.weddingDeg },
                     ].map((imgPreset, idx) => (
                       <button
                         key={idx}

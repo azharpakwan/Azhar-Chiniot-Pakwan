@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, MessageCircle, Flame, Sparkles, Clock, ShieldCheck } from 'lucide-react';
 import { useFood } from '../context/FoodContext';
+import { IMAGES } from '../assets/images';
 
 export const Hero: React.FC = () => {
   const { generateWhatsAppOrderUrl, language } = useFood();
@@ -110,7 +111,7 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-amber-500/20 shadow-2xl shadow-black/80 bg-slate-900 group">
               <img
-                src="/src/assets/images/hero_azhar_pakwan_spread_1790592430943.jpg"
+                src={IMAGES.heroSpread}
                 alt="Azhar Chiniot Pakwan royal feast with steaming biryani, mutton karahi, and fresh tandoori naan"
                 className="w-full h-[360px] sm:h-[440px] object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"

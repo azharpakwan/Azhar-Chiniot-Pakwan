@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { MenuItem, Category, CartItem, Order, OrderCustomer, SpecialOffer, PortionOption } from '../types/food';
 import { INITIAL_CATEGORIES, INITIAL_MENU_ITEMS, INITIAL_OFFERS } from '../data/initialMenu';
+import { resolveDishImage, IMAGES } from '../assets/images';
 
 interface FoodContextType {
   menuItems: MenuItem[];
@@ -74,7 +75,14 @@ export const FoodProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [menuItems, setMenuItems] = useState<MenuItem[]>(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEYS.MENU);
-      return saved ? JSON.parse(saved) : INITIAL_MENU_ITEMS;
+      if (saved) {
+        const parsed: MenuItem[] = JSON.parse(saved);
+        return parsed.map((item) => ({
+          ...item,
+          image: resolveDishImage(item.image),
+        }));
+      }
+      return INITIAL_MENU_ITEMS;
     } catch {
       return INITIAL_MENU_ITEMS;
     }
@@ -101,7 +109,17 @@ export const FoodProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [cart, setCart] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEYS.CART);
-      return saved ? JSON.parse(saved) : [];
+      if (saved) {
+        const parsed: CartItem[] = JSON.parse(saved);
+        return parsed.map((item) => ({
+          ...item,
+          menuItem: {
+            ...item.menuItem,
+            image: resolveDishImage(item.menuItem.image),
+          },
+        }));
+      }
+      return [];
     } catch {
       return [];
     }

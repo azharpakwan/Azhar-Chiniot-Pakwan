@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Search, Plus, Star, Flame, Calculator, Sparkles, AlertCircle } from 'lucide-react';
 import { useFood } from '../context/FoodContext';
 import { MenuItem } from '../types/food';
+import { IMAGES, resolveDishImage } from '../assets/images';
 
 interface MenuSectionProps {
   onOpenCalculator: () => void;
@@ -176,12 +177,12 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onOpenCalculator }) =>
                   onClick={() => setSelectedDish(dish)}
                 >
                   <img
-                    src={dish.image}
+                    src={resolveDishImage(dish.image)}
                     alt={dish.nameEn}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = '/src/assets/images/hero_azhar_pakwan_spread_1790592430943.jpg';
+                      (e.target as HTMLImageElement).src = IMAGES.heroSpread;
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
