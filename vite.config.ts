@@ -3,11 +3,9 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(({command}) => {
+export default defineConfig(() => {
   return {
-    // Base path for GitHub Pages: /Azhar-Chiniot-Pakwan/ in production build,
-    // and '/' during local development to avoid breaking the local dev server.
-    base: process.env.VITE_BASE_URL || (command === 'serve' ? '/' : '/Azhar-Chiniot-Pakwan/'),
+    base: '/Azhar-Chiniot-Pakwan/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
